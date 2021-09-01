@@ -1,0 +1,53 @@
+div.countdown-container {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    font-size: 30px;
+    height: 200px;
+}
+
+div.countdown-container div[class^="countdown-"] {
+    flex-grow: 1;
+}
+
+div.countdown-description {
+    background-color: green;
+}
+div.countdown-timer {
+    background-color: yellow;
+}
+div.countdown-button {
+    background-color: red;
+}
+
+/* Codepen clock test */
+#countdown{
+    text-align: center;
+}
+
+#countdown #tiles > span{
+    width: 500px;
+    max-width: 92px;
+    font: bold 48px 'Droid Sans', Arial, sans-serif;
+    text-align: center;
+    color: #111;
+    background-color: #ddd;
+    background-image: -webkit-linear-gradient(top, #bbb, #eee);
+    background-image:    -moz-linear-gradient(top, #bbb, #eee);
+    background-image:     -ms-linear-gradient(top, #bbb, #eee);
+    background-image:      -o-linear-gradient(top, #bbb, #eee);
+    border-top: 1px solid #fff;
+    border-radius: 3px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
+    margin: 0 7px;
+    padding: 18px 0;
+    display: inline-block;
+    position: relative;
+}
+
+#countdown .labels li{
+    width: 100px;
+    color: #f47321;
+    display: inline-block;
+}
