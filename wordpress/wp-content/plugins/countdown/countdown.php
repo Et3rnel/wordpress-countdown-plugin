@@ -1,5 +1,9 @@
 <?php
 
+use Countdown\MenuAdminTest;
+
+require plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+
 /**
  * Plugin Name: Countdown
  * Description: Countdown plugin desc.
@@ -12,10 +16,11 @@ $javascriptPath = plugins_url('countdown.js', __FILE__);
 wp_register_style('countdown', $stylesheetPath);
 wp_register_script('countdown', $javascriptPath);
 
-function your_function() {
+function your_function()
+{
     wp_enqueue_style('countdown');
     wp_enqueue_script('countdown');
-    
+
     ?>
     <div class="countdown-container">
         <div class="countdown-description">This is inserted at the bottom haha HO</div>
@@ -34,13 +39,24 @@ function your_function() {
     </div>
     <?php
 }
-add_action( 'wp_footer', 'your_function' );
 
-//
-add_action(‘admin_menu’, ‘test_plugin_setup_menu’);
-function test_plugin_setup_menu(){
-    add_menu_page( 'Test Plugin Page', 'Test Plugin', 'manage_options', 'test-plugin', 'test_init' );
+add_action('wp_footer', 'your_function');
+
+
+
+// TEST MENU
+add_action('admin_menu', 'my_menu');
+
+function my_menu() {
+    add_menu_page('My Page Title', 'My Menu Title', 'manage_options', 'my-page-slug', 'my_function');
 }
-function test_init(){
-    echo "<h1>Hello World!</h1>";
+
+function my_function() {
+    $a = new MenuAdminTest();
+
+    $a->test();
+    echo 'Hello world!';
 }
+
+
+
