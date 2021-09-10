@@ -27,3 +27,10 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
 
+  node:
+    build:
+      context: .
+      dockerfile: node.Dockerfile
+    tty: true # Allocate a pseudo-TTY to be able to run npm command / to prevent container from exiting
+    volumes:
+      - ./wordpress/wp-content/plugins/countdown:/src/
