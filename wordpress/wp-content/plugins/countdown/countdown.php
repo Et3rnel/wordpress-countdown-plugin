@@ -1,8 +1,6 @@
 <?php
 
-use Countdown\MenuAdminTest;
-
-require plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+require plugin_dir_path( __FILE__ ) . 'src/vendor/autoload.php';
 
 /**
  * Plugin Name: Countdown
@@ -42,21 +40,8 @@ function your_function()
 
 add_action('wp_footer', 'your_function');
 
-
-
-// TEST MENU
-add_action('admin_menu', 'my_menu');
-
-function my_menu() {
-    add_menu_page('My Page Title', 'My Menu Title', 'manage_options', 'my-page-slug', 'my_function');
-}
-
-function my_function() {
-    $a = new MenuAdminTest();
-
-    $a->test();
-    echo 'Hello world!';
-}
+$countdownAdminMenu = new \Countdown\CountdownAdminMenu();
+$countdownAdminMenu->test();
 
 
 
