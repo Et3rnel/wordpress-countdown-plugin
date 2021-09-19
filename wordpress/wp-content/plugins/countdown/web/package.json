@@ -1,0 +1,20 @@
+{
+  "name": "countdown",
+  "version": "1.0.0",
+  "description": "Countdown front-end",
+  "main": "../countdown.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "../node_modules/.bin/rollup --config"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.2.11",
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "rollup": "^2.56.3",
+    "rollup-plugin-vue": "^6.0.0"
+  }
+}

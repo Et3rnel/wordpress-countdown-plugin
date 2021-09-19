@@ -2,7 +2,7 @@
 
 ## Start the project 
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 
 ## Update the autoloader

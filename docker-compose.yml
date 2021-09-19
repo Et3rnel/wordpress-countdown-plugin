@@ -5,7 +5,7 @@ services:
     image: mysql:5.7
     volumes:
       - ./db:/var/lib/mysql
-    restart: always
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: somewordpress
       MYSQL_DATABASE: wordpress
@@ -20,7 +20,7 @@ services:
       - ./wordpress:/var/www/html
     ports:
       - "8000:80"
-    restart: always
+    restart: unless-stopped
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
@@ -31,6 +31,7 @@ services:
     build:
       context: .
       dockerfile: node.Dockerfile
-    tty: true # Allocate a pseudo-TTY to be able to run npm command / to prevent container from exiting
+    tty: true # allocate a pseudo-TTY to be able to run npm command / to prevent container from exiting
+    restart: unless-stopped # prevent the automatic start of containers when docker starts and when the containers were stopped manually
     volumes:
       - ./wordpress/wp-content/plugins/countdown:/src/
