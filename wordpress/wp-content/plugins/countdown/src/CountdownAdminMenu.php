@@ -23,13 +23,19 @@ class CountdownAdminMenu
 
 	public function background()
 	{
-		wp_register_script(
+		wp_register_style(
 			'countdown-admin',
-			plugins_url('my-lib.umd.js', 'countdown/web/dist/my-lib.umd.js')
+			plugins_url('style.css', 'countdown/web/dist/style.css')
 		);
 
+		wp_register_script(
+			'countdown-admin',
+			plugins_url('admin-menu.umd.js', 'countdown/web/dist/admin-menu.umd.js') // TODO : change this
+		);
+
+		wp_enqueue_style('countdown-admin');
 		wp_enqueue_script('countdown-admin');
 
-		echo '<div id="app"></div>';
+		echo '<div id="admin-menu"></div>';
 	}
 }

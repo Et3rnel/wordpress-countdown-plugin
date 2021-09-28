@@ -16,7 +16,7 @@ $javascriptPath = plugins_url('countdown.js', __FILE__);
 wp_register_style('countdown', $stylesheetPath);
 wp_register_script('countdown', $javascriptPath);
 
-function your_function()
+function display_countdown()
 {
     wp_enqueue_style('countdown');
     wp_enqueue_script('countdown');
@@ -40,7 +40,7 @@ function your_function()
     <?php
 }
 
-add_action('wp_footer', 'your_function');
+add_action('wp_footer', 'display_countdown');
 
 $countdownAdminMenu = new CountdownAdminMenu();
 
