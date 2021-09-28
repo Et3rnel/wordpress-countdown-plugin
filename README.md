@@ -1,5 +1,11 @@
 # Countdown WordPress plugin
 
+## Project structure
+The plugin folder is located in this path
+`wordpress/wp-content/plugins/countdown`
+
+The files related to the back-end part are located in the `src` folder and the files related to the front-end are located in the `web` folder.
+
 ## Start the project 
 ```bash
 docker-compose up -d --build
