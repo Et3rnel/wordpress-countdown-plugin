@@ -1,5 +1,7 @@
 <?php
 
+use Countdown\CountdownAdminMenu;
+
 require plugin_dir_path( __FILE__ ) . 'src/vendor/autoload.php';
 
 /**
@@ -40,8 +42,6 @@ function your_function()
 
 add_action('wp_footer', 'your_function');
 
-$countdownAdminMenu = new \Countdown\CountdownAdminMenu();
-$countdownAdminMenu->test();
-
+$countdownAdminMenu = new CountdownAdminMenu();
 
 

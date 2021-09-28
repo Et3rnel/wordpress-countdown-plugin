@@ -5,7 +5,6 @@ namespace Countdown;
 class CountdownAdminMenu
 {
 	public function __construct() {
-
 		add_action(
 			'admin_menu', # Fires before the administration menu loads in the admin.
 			function() {
@@ -14,35 +13,23 @@ class CountdownAdminMenu
 					'My Menu Title',
 					'manage_options',
 					'my-page-slug',
-					'my_function'
+					function() {
+						$this->background();
+					}
 				);
 			}
 		);
 	}
 
-	public function my_function() {
-		echo 'Hello method!';
+	public function background()
+	{
+		wp_register_script(
+			'countdown-admin',
+			plugins_url('my-lib.umd.js', 'countdown/web/dist/my-lib.umd.js')
+		);
+
+		wp_enqueue_script('countdown-admin');
+
+		echo '<div id="app"></div>';
 	}
-
-    public function test()
-    {
-	    function my_function() {
-		    echo 'Hello method!';
-	    }
-
-	    add_action(
-		    'admin_menu', # Fires before the administration menu loads in the admin.
-		    function() {
-			    add_menu_page(
-				    'My Page Title',
-				    'My Menu Title',
-				    'manage_options',
-				    'my-page-slug',
-				    'my_function'
-			    );
-		    }
-	    );
-
-        echo 'Je suis un test echo';
-    }
 }
