@@ -22,7 +22,6 @@ You need to specify the path manually or you need to go into the correct folder.
 composer dumpautoload -o
 ```
 
-
 To execute the command in the container from outside you can use :
 ```bash
 docker exec wp-plugin_wordpress_1 composer --working-dir=/var/www/html/wp-content/plugins/countdown/src dumpautoload -o
