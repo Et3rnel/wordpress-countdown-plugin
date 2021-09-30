@@ -1,20 +1,9 @@
+# Database docker volume
 db
-node_modules
-/dist
 
-# ignore everything in the "wp-content" directory, except: "plugins" directory
-wp-content/*
-!wp-content/plugins/
-
-# local env files
-.env.local
-.env.*.local
-
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+# Ignore wordpress installation files except the "countdown" plugin
+wordpress
+!wordpress/wp-content/plugins/countdown
 
 # Editor directories and files
 .idea
