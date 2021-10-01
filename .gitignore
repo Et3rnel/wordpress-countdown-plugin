@@ -2,7 +2,13 @@
 db
 
 # Ignore wordpress installation files except the "countdown" plugin
-wordpress
+# It's bit tricky because ignored directories cannot be seen by gitignore if already exlucded
+# See https://stackoverflow.com/a/16318111/7826970
+wordpress/*
+!wordpress/wp-content
+wordpress/wp-content/*
+!wordpress/wp-content/plugins
+wordpress/wp-content/plugins/*
 !wordpress/wp-content/plugins/countdown
 
 # Editor directories and files
