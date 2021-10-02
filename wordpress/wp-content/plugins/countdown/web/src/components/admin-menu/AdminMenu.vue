@@ -2,11 +2,14 @@
 </script>
 
 <template>
-  <img alt="Vue logo" src="../../assets/logo.png" />
-  <p>I'm a paragraph in the admin menu</p>
+  <form method="post">
+    <label for="start-date">Countdown start date: </label>
+    <input type="date" name="start-date" id="start-date" required>
+    <input type="submit">
+  </form>
 </template>
 
-<style>
+<style scoped>
 #admin-menu {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
